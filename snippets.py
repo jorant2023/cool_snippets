@@ -1,4 +1,4 @@
-#Code for filter strings in dataframe
+#Code for filter strings in dataframe aa
 
 is_30 =  df_training_dataset['Telefono']=='Iphone'
 print('--------------')
