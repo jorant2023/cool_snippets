@@ -52,3 +52,24 @@ df_training_dataset.median(axis = 0)
 #aumentar tamaño de muestreo en el notebook
 pd.options.display.max_rows = 4000
 #______________________________________________
+
+
+#derivada parcial python
+
+<from math import *
+import sympy as sp
+
+
+def derivada(expr, variables):
+    for der_respect in variables:
+        var = sp.Symbol(f'{der_respect}')
+        funcion = sp.Derivative(expr, var, evaluate=True)
+        print(f'La derivada parcial df/d{der_respect} =  {funcion}')
+
+
+if __name__ == '__main__':
+    variables = ['x', 'y', 'z']
+    expr = input("\nFuncion a evaluar:    f(x,y,z)=")
+    derivada(expr, variables)>
+   
+#_____________________________________________________
