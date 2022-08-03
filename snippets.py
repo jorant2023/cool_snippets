@@ -73,3 +73,20 @@ if __name__ == '__main__':
     derivada(expr, variables)>
    
 #_____________________________________________________
+#
+#melt para unir multiples columnas en una columna con valores
+#
+df1 = pd.melt(df0, id_vars=["Z_MARCA", "Z_GAMA", "Z_MODELO", "Z_DEPARTAMENTO", "Z_PUNTO_VENTA"], 
+                  var_name="Semana", value_name="Demanda")
+
+#____________________________________________________________
+#CAtegoricas a numericas simples
+#llevando de tipo object a tipo category
+df1['Z_MARCA'] = df1['Z_MARCA'].astype('category')
+df1['Z_GAMA'] = df1['Z_GAMA'].astype('category')
+#revisando columnas tipo category
+cat_columns = df1.select_dtypes(['category']).columns
+cat_columns
+#Llevandolas a numericas
+df1[cat_columns] = df1[cat_columns].apply(lambda x: x.cat.codes)
+#_____________________________________________________________
