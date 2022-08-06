@@ -90,3 +90,20 @@ cat_columns
 #Llevandolas a numericas
 df1[cat_columns] = df1[cat_columns].apply(lambda x: x.cat.codes)
 #_____________________________________________________________
+#
+#Valores maximos de columna de DF
+import pandas as pd
+
+df = pd.DataFrame({'X': [1, 2, 2, 3],
+                   'Y': [4, 3, 8, 4]})
+print("DataFrame:")
+print(df)
+
+maxs = df.max()
+
+print("Max of Each Column:")
+print(maxs)
+
+#_____________________________________________________________
+#
+#
