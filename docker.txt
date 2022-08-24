@@ -1,0 +1,17 @@
+docker images
+docker run 'image'
+docker run -it 'image'  ###interactivo
+docker ps ###imagenes activas
+docker ps -a  ###imagenes totales dentro del docker
+docker rm 'ID'|'Name'   ###eliminar containers
+docker start 'ID'|'Name'   ###3 primeras letras+tab
+docker pull 'image'    
+docker run -p 'puerto local':'puerto container' 'image'
+docker run -p 'puerto local':'puerto container' -d 'image'    ###detach no deja el cursor en el aire el ajecutarse
+docker ps -aq     ###lista imagenes pero solo el id (sirve para eliminar todos sin necesidad de nombrarlos)
+docker rm $(docker ps -aq)     ###elimina todos los containers
+docker stop $(docker ps -aq)     ###detiene todos los containers
+docker run -p 'puerto local':'puerto container' -d --name 'myNameContainer' 'image'   ###agrega un nombre de imagen
+docker rm 'ID'|'Name' -f   ###fuerza el cerrado y elimina
+containers
+###para pasar variables de entorno ver la documentacion de la imagen
